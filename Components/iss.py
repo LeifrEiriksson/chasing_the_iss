@@ -6,14 +6,12 @@ import time
 class ISS():
 
     def __init__ (self):
-
         self.welcome = "Ladies and Gentlemen, welcome aboard the ISS!"
         self.response = requests.get("http://api.open-notify.org/iss-now.json").json() 
         self.iss_time = datetime.fromtimestamp(self.response['timestamp']).strftime('%H:%M:%S')
 
 
     def verify(self):
-
         if self.response['message'] ==  'success':
            return "Sucess! We're floating in space!"
 
@@ -24,7 +22,7 @@ class ISS():
         return [names['name'] for names in requests.get("http://api.open-notify.org/astros.json").json()['people'] if names['craft'] == 'ISS']
 
     def position (self):
-        self.iss_latitude = self.response['iss_position']['latitude']
-        self.iss_longitude = self.response['iss_position']['longitude']
+        self.iss_latitude = float(self.response['iss_position']['latitude'])
+        self.iss_longitude = float(self.response['iss_position']['longitude'])
 
         return self.iss_latitude , self.iss_longitude 

@@ -4,7 +4,7 @@ import time
 
 class Where_am_I():
 
-    def __init__(self, nome):
+    def __init__(self, nome=None):
         self.nome = nome
         self.current_time = datetime.now().strftime('%H:%M:%S')
 
@@ -15,4 +15,4 @@ class Where_am_I():
         self.latitude = geocoder.ip('me').lat
         self.longitude = geocoder.ip('me').lng
 
-        return self.latitude , self. longitude
+        return self.latitude , self.longitude
