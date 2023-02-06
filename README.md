@@ -5,9 +5,6 @@ A simple Python project about space, especially the ISS. The objective is to cal
 
 <p align="center"><img src= "https://user-images.githubusercontent.com/92702848/217097355-658b747d-039e-440f-8930-83e8d5d2abc8.jpg"></p>
 
-* [Briefing](#Briefing)
-* [APIs](#APIs)
-
 # 🌌 Briefing
 
 This project starts with my curiosity about the space, so, if you think about it you can travel through your ideas in a infinite trip like the universe. 
@@ -25,6 +22,9 @@ The first step was the searching about APIs that give me the localization of the
  - `ISS:` return informations about the API status, current latitude, longitude and about the astronauts.
  - `Astrolabe:` using the inheritance concept, here, we can chase the ISS with the compass, current country of ISS, and the distance between me and the astronauts. At this point its important to highlight that the distance use the haversine formula, which considers the non-euclidean geometry of the Earth, that's return the distance more accurately.
  - `Image Of Day:` here we can access the NASA's image of the day, if you want you can access it with your personal API key, but if you don't have any key, don't worry, there's a DEMO key (with some requests limits).
+ 
+ # 🌃 But what about JUPYTER NOTEBOOK? 
+ It's my sandbox ( ͡° ͜ʖ ͡°)
  
  
 
