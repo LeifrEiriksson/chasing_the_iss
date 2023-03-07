@@ -22,9 +22,7 @@ The first step was the searching about APIs that give me the localization of the
  - `ISS:` return informations about the API status, current latitude, longitude and about the astronauts.
  - `Astrolabe:` using the inheritance concept, here, we can chase the ISS with the compass, current country of ISS, and the distance between me and the astronauts. At this point its important to highlight that the distance use the haversine formula, which considers the non-euclidean geometry of the Earth, that's return the distance more accurately.
  - `Image Of Day:` here we can access the NASA's image of the day, if you want you can access it with your personal API key, but if you don't have any key, don't worry, there's a DEMO key (with some requests limits).
- 
- # 🌃 But what about JUPYTER NOTEBOOK? 
- It's my sandbox ( ͡° ͜ʖ ͡°)
+
  
  
 
