@@ -1,21 +1,22 @@
 import geocoder
 import geopy
-import math
+import haversine
 from geopy.geocoders import Nominatim
-import haversine 
 from haversine import Unit
-from Components import ISS
-from Components import Where_Am_I
 
-class Astrolabe(ISS.ISS, Where_Am_I.Where_am_I):
-    
+from Components.InternationalSpaceStation import Iss
+from Components.My_Location import Where_Am_I
+
+
+class Astrolabe(Iss, Where_Am_I):
+
     def __init__(self):
+
         super().__init__()
 
+    def distance_km(self):
 
-    def distance_km(self):   
-       return round((haversine.haversine(self.position(),self.coordinates(), unit = Unit.KILOMETERS)),2)
-
+        return round((haversine.haversine(self.position(), self.coordinates(), unit=Unit.KILOMETERS)), 2)
 
     def match(self):
 
@@ -32,29 +33,31 @@ class Astrolabe(ISS.ISS, Where_Am_I.Where_am_I):
         else:
             return "The ISS is so far..."
 
-
     def compass_ISS(self):
 
-        self.lat_iss =  self.long_iss = None
+        self.lat_iss = self.long_iss = None
 
-        if self.position()[0] > 0:
-            self.lat_iss = "North"
-        else:
-            self.lat_iss = "South"
-
-        if self.position()[1] > 0:
-            self.long_iss =  "East"
-        else:
-            self.long_iss = "West"
+        self.lat_iss = "North" if self.position()[0] > 0 else "South"
+        self.long_iss = "East" if self.position()[1] > 0 else "West"
 
         return f"ISS - Lat_issitude: {self.lat_iss} and Longitude: {self.long_iss}"
 
-    def iss_country(self):
-        
+    def iss_complete_location(self):
+
         try:
             self.geolocation = Nominatim(user_agent="geoapiExercises")
-            self.location = self.geolocation.reverse(str(self.position()[0])+","+str(self.position()[1])).raw['address']
+            self.location = self.geolocation.reverse(
+                str(self.position()[0])+","+str(self.position()[1])).raw['address']
             return self.location
 
         except:
             return "Did the ISS enter a black hole?"
+
+    def iss_country(self):
+
+        self.contry_loc = None
+
+        self.country_loc = Astrolabe().iss_complete_location(
+        )['country'] if 'country' in self.iss_complete_location() else "--"
+
+        return self.country_loc
