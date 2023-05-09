@@ -5,6 +5,6 @@ from Components import (Astrolabe, ImageOfDay, InternationalSpaceStation,
 # iss = InternationalSpaceStation.Iss()
 # astrolabe = Astrolabe.Astrolabe()
 # image = ImageOfDay.ImageOfDay()
-data_streaming = IssDataStreaming
 
+data_streaming = IssDataStreaming
 data_streaming.ISS_Monitoring()
