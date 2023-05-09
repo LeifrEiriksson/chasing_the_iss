@@ -1,15 +1,17 @@
-# Chasing the ISS!
-<p align="left"><img src= "https://img.shields.io/badge/Status-Constantly%20Updated-brightgreen"></p>
+# Chasing the ISS! (And streaming data)
 
-A simple Python project about space, especially the ISS. The objective is to calculate the distance between you and the ISS and get some information about it, such as who is on it, what country it is flying over.
+<p align="left"><img src= "https://img.shields.io/badge/Status-Constantly%20Updated-brightgreen"></p>
 
 <p align="center"><img src= "https://user-images.githubusercontent.com/92702848/217097355-658b747d-039e-440f-8930-83e8d5d2abc8.jpg"></p>
 
+<p align="center">"Ground Control to Major Tom..."</p>
+
+
 # 🌌 Briefing
 
-This project starts with my curiosity about the space, so, if you think about it you can travel through your ideas in a infinite trip like the universe. 
-But I needed a starting point, instead of trying to keep with a pretentious project, I prefer to make simple code with few objects(POO) that give me the position on the ISS and who is inside.
-The first step was the searching about APIs that give me the localization of the ISS and more (like the famous NASA's Picture of the day), so, I got it!
+This project originated from a simple and personal idea: the desire to explore space! 
+I know that the International Space Station is not a celestial body in the proper sense, or what we consider a "natural" celestial body, but it seemed to me an excellent starting point as it is easily trackable through the use of APIs, and for a beginner's project, the challenge seemed satisfactory. 
+Initially, I opted for the use of Object-Oriented Programming in Python (OOP) as it seemed like a safe and robust alternative for our studies, and its modularization would allow for greater scalability in the future, in case we intend to expand the scope of our studies to other satellites, for example
 
 # :rocket: APIs
 
