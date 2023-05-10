@@ -43,7 +43,8 @@ Our Python file responsible for data streaming is configured using the "psycopg2
 
 (Note: The configurations adopted follow a very simple pattern that satisfies our studies. For a higher level of security, it is up to the user to configure Postgres in our docker-compose file, bearing in mind that the image used already brings a Debezium extension.)
 
-![Local](https://github.com/LeifrEiriksson/chasing_the_iss/assets/92702848/882c2a7f-7dce-4634-a4c7-e3bc638b6dca)
-
+<p align="center">
+  <img src="https://github.com/LeifrEiriksson/chasing_the_iss/assets/92702848/882c2a7f-7dce-4634-a4c7-e3bc638b6dca">
+</p>
 
 
