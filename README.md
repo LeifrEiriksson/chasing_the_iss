@@ -34,6 +34,16 @@ Beyond creating objects capable of providing information about the ISS and ourse
  - `Image Of Day:` here we can access the NASA's image of the day, if you want you can access it with your personal API key, but if you don't have any key, don't worry, there's a DEMO key (with some requests limits).
  - `IssDataStreaming:` also using the inheritance, here we can start our streaming and send data to Postgres.
 
- 
- 
+# :space_invader:	Data Architecture - Engineering
+
+As highlighted in the Briefing, our data processing architecture is centralized in a Docker container containing our Postgres database and the Debezium connector, which will be connected to Kafka. With this, the data generated through Python is sent directly to Postgres while Kafka proceeds with streaming. It is worth noting that the topic fed in this case will carry the same information as the `database.server.name` configured in our JSON.
+
+Our Python file responsible for data streaming is configured using the "psycopg2" library to send the data to the database in question (ISS), feeding the "iss_monitoring" table. So far, as it satisfies the project scope, I haven't sought any substantial changes in the query, but we can consider future scalability if it is necessary to adapt for other satellites/celestial bodies that feed another database and, consequently, tables.
+
+
+(Note: The configurations adopted follow a very simple pattern that satisfies our studies. For a higher level of security, it is up to the user to configure Postgres in our docker-compose file, bearing in mind that the image used already brings a Debezium extension.)
+
+![Local](https://github.com/LeifrEiriksson/chasing_the_iss/assets/92702848/882c2a7f-7dce-4634-a4c7-e3bc638b6dca)
+
+
 
