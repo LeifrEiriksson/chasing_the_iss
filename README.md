@@ -21,8 +21,19 @@ Beyond creating objects capable of providing information about the ISS and ourse
 
 (Note: You can consult the docker-compose through Docker_configurations, where we also have the JSON used to configure the connector.)
 
+# :woman_astronaut: Note - updates
+
+Recently, I have been thinking about ways to make this project more performant, considering the scalability of its applications. To achieve this, I am working on a robust solution using the N2YO API, which will allow us to expand our data collection to other satellites.
+
+The initial idea is to design a class that can represent a specific satellite. Currently, I am focusing on gathering exclusive information about the ISS. However, in the future, I plan to extend the data collection to include other satellites as well.
+
+Furthermore, I intend to explore data collection from our database and implement streaming functionalities to handle this information effectively.
+
+Note: Most likely, to make full use of all the functions of this project, it will be necessary to register on the N2YO platform.
+
 # :rocket: APIs
 
+ - N2YO - https://www.n2yo.com/api/
  - Open Notify - International Space Station Current Location: http://open-notify.org/Open-Notify-API/ISS-Location-Now/  
  - NASA -  Astronomy Picture of the Day(APOD): https://api.nasa.gov/ 
 
