@@ -6,17 +6,21 @@ import geopy
 from geopy.geocoders import Nominatim
 
 
-class Where_Am_I():
+class Where_am_I():
 
     def __init__(self, nome=None):
+        
         self.nome = nome
         self.current_time = datetime.now().strftime('%H:%M:%S')
 
-    def current_location_name(self):
-        return geocoder.ip('me')
+    def current_location_name (self):
 
-    def coordinates(self):
+        return geocoder.ip('me')
+    
+    def my_coordinates(self):
+
         self.latitude = geocoder.ip('me').lat
         self.longitude = geocoder.ip('me').lng
 
-        return self.latitude, self.longitude
+        return self.latitude , self.longitude
+    

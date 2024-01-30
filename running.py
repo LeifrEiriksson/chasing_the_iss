@@ -1,2 +1,2 @@
-from Components import (Astrolabe, ImageOfDay, InternationalSpaceStation,
-                        IssDataStreaming, My_Location)
+from Components import (Astrolabe, InternationalSpaceStation, IssDataStreaming,
+                        My_Location)

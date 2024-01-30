@@ -17,25 +17,14 @@ The project was based on Object-Oriented Programming, with the aim of providing 
 
 The "Components" file received this name precisely because it alludes to the components of a rocket, but you will notice that when accessing it, we will see other information closer to "locations" than to a propeller or fuselage.
 
-Beyond creating objects capable of providing information about the ISS and ourselves in relation to the Earth, it is also important to capture and structure this information for future studies, applying, perhaps, Data Science concepts. For this, I created an architecture in Docker, containing a Postgres database and a Debezium connector so that we can transmit the data to Kafka. The objective is both to have a messaging system through the prompt while our Python script runs independently, and to provide streaming data for consumption on other platforms, such as Spark (this part is still being worked on and thought out).
+Beyond creating objects capable of providing information about the ISS and ourselves in relation to the Earth, it is also important to capture and structure this information for future studies, applying, perhaps, Data Science concepts. For this, I created an architecture in Docker, containing a Postgres database so that we can transmit the data to DB.
 
 (Note: You can consult the docker-compose through Docker_configurations, where we also have the JSON used to configure the connector.)
 
-# :woman_astronaut: Note - updates
-
-Recently, I have been thinking about ways to make this project more performant, considering the scalability of its applications. To achieve this, I am working on a robust solution using the N2YO API, which will allow us to expand our data collection to other satellites.
-
-The initial idea is to design a class that can represent a specific satellite. Currently, I am focusing on gathering exclusive information about the ISS. However, in the future, I plan to extend the data collection to include other satellites as well.
-
-Furthermore, I intend to explore data collection from our database and implement streaming functionalities to handle this information effectively.
-
-Note: Most likely, to make full use of all the functions of this project, it will be necessary to register on the N2YO platform.
 
 # :rocket: APIs
 
- - N2YO - https://www.n2yo.com/api/
  - Open Notify - International Space Station Current Location: http://open-notify.org/Open-Notify-API/ISS-Location-Now/  
- - NASA -  Astronomy Picture of the Day(APOD): https://api.nasa.gov/ 
 
 # :telescope: POO - Components
 
@@ -47,10 +36,7 @@ Note: Most likely, to make full use of all the functions of this project, it wil
 
 # :space_invader:	Data Architecture - Engineering
 
-As highlighted in the Briefing, our data processing architecture is centralized in a Docker container containing our Postgres database and the Debezium connector, which will be connected to Kafka. With this, the data generated through Python is sent directly to Postgres while Kafka proceeds with streaming. It is worth noting that the topic fed in this case will carry the same information as the `database.server.name` configured in our JSON.
-
-Our Python file responsible for data streaming is configured using the "psycopg2" library to send the data to the database in question (ISS), feeding the "iss_monitoring" table. So far, as it satisfies the project scope, I haven't sought any substantial changes in the query, but we can consider future scalability if it is necessary to adapt for other satellites/celestial bodies that feed another database and, consequently, tables.
-
+Our Python file responsible for data streaming is configured using the "psycopg2" library to send the data to the database, feeding the "iss_monitoring" table. So far, as it satisfies the project scope, I haven't tought any substantial changes in the query, but we can consider future scalability if it is necessary to adapt for other satellites/celestial bodies that feed another database and, consequently, tables.
 
 (Note: The configurations adopted follow a very simple pattern that satisfies our studies. For a higher level of security, it is up to the user to configure Postgres in our docker-compose file, bearing in mind that the image used already brings a Debezium extension.)
 
